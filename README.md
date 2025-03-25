@@ -67,4 +67,5 @@ Check de ansible version
 ansible --version
 ```
 Expected answer
+
 ![Ansible --version](./images/ansible-version.png)
