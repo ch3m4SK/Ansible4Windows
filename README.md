@@ -1,2 +1,2 @@
 # Ansible4Windows
-![Ansible Logo](./images/ansible-logo.png)
+![Ansible Logo](./images/ansible-1.jpg)
