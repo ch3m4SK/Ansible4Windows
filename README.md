@@ -6,6 +6,7 @@
   - [SSH](#ssh-for-windows-server-2025)
   - [Configure ubuntu](#configure-ubuntu-and-prepare-the-environment)
 - [Create inventory file](#create-a-new-inventory)
+- [Test connection](#test-connection)
 
 <div align="center">
 <h1> Introduction</h1>
@@ -96,7 +97,8 @@ ansible_connection = ssh
 ansible_shell_type = powershell
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ```
-Test connection
+# Test connection
+
 ```shell
 ansible all -i hosts_inicial.ini -m ansible.windows.win_ping -u Administrator --ask-pass
 ```
