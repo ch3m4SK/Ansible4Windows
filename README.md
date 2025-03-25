@@ -100,5 +100,5 @@ ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 # Test connection
 
 ```shell
-ansible all -i hosts_inicial.ini -m ansible.windows.win_ping -u Administrator --ask-pass
+ansible all -i inventory.ini -m ansible.windows.win_ping -u Administrator --ask-pass
 ```
