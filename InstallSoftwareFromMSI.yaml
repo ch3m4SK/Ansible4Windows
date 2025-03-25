@@ -1,0 +1,14 @@
+#Instala MSI
+---
+- name: Install 7-Zip
+  hosts: windows
+  tasks:
+    - name: Download 7-Zip
+      win_get_url:
+        url: https://www.7-zip.org/a/7z2409-x64.msi
+        dest: C:\users\administrator\downloads\7zip.msi
+    - name: Install 7-Zip
+      win_package:
+        path: C:\users\administrator\downloads\7zip.msi
+        state: present
+        arguments: "/quiet /norestart"

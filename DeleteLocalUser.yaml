@@ -1,0 +1,11 @@
+---
+- name: Delete a windows local user
+  hosts: windows
+  gather_facts: no
+  vars:
+    username: "user1"
+  tasks:
+    - name: Delte user {{ username }} from Windows
+      ansible.windows.win_user:
+        name: "{{ username }}"
+        state: absent

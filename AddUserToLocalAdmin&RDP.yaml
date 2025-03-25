@@ -1,0 +1,21 @@
+---
+- name: Add user to local administrators
+  hosts: windows
+  gather_facts: no
+  vars:
+    username: "user1"
+    group_name: "Administrators"  # Local administrators group
+    group_name2: "Remote Desktop Users"  # RDP group
+  tasks:
+    - name: Add user {{ username }} to group {{ group_name }}
+      ansible.windows.win_group_membership:
+        name: "{{ group_name }}"
+        members:
+          - "{{ username }}"
+        state: present
+    - name: Add user {{ username }} to group {{ group_name2 }}
+      ansible.windows.win_group_membership:
+        name: "{{ group_name2 }}"
+        members:
+          - "{{ username }}"
+        state: present

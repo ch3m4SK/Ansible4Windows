@@ -1,0 +1,17 @@
+---
+- name: Download and Install Google Chrome
+  hosts: windows
+  gather_facts: no
+  vars:
+    installer_url: "https://dl.google.com/chrome/install/latest/chrome_installer.exe"
+    installer_path: "C:\\Instaladores\\chrome_installer.exe"
+  tasks:
+    - name: Download chrome installer
+      ansible.windows.win_get_url:
+        url: "{{ installer_url }}"
+        dest: "{{ installer_path }}"
+    - name: Install Chrome
+      ansible.windows.win_package:
+        path: "{{ installer_path }}"
+        state: present
+        arguments: "/silent /install"

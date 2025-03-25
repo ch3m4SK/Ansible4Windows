@@ -1,0 +1,11 @@
+---
+- name: Unistall a program by uing GUID
+  hosts: windows
+  gather_facts: no
+  vars:
+    product_id: "{4DC8B4CA-1F23-4FE8-9F0D-3F09C7990E69}" # Replace it whit the real GUID
+  tasks:
+    - name: Uninstall the program
+      ansible.windows.win_package:
+        product_id: "{{ product_id }}"
+        state: absent
