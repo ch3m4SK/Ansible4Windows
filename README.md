@@ -31,4 +31,18 @@ New-NetFirewallRule -DisplayName "Allow WinRM HTTPS" -Direction Inbound -LocalPo
 ```
 
 
-## SSH
+## SSH for Windows Server 2025
+To enable ssh on a windows server you need an active ssh server on the machine, windows server 2025 includes as an option the possibility to install OpenSSH, to do this we will use the following steps
+
+Add the service
+```shell
+set-service -name sshd -StartupType Automatic
+```
+Create firewall rule
+```shell
+New-NetFirewallRule -DisplayName 'Permitir SSH' -Name 'Permitir SSH' -Profile Any -LocalPort 22 -Protocol TCP
+```
+start the service
+```shell
+start-service -name sshd
+```
