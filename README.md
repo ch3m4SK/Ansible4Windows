@@ -90,7 +90,7 @@ sudo nano ./inventory.ini
 File content
 ```shell
 [windows]
-server2025 ansible_host=10.10.100.166 #Listado de servidores
+server2025 ansible_host=192.168.10.165 #Listado de servidores
 [all:vars]
 ansible_connection = ssh
 ansible_shell_type = powershell
