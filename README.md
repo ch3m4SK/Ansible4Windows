@@ -1,6 +1,10 @@
 # Ansible4Windows
 ![Ansible Logo](./images/ansible-1.jpg)
 
+- [Initial Set-Up](#initial-set-up)
+    -[WinRM](#winrm)
+    -[SSH](#ssh-for-windows-server-2025)
+
 <div align="center">
 <h1> Introduction</h1>
 </div>
