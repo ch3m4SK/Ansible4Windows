@@ -53,16 +53,16 @@ Upgrade ubuntu 24.04
 ```shell
 sudo apt update && sudo apt dist-upgrade -y
 ```
-install the necessary packages
+Install the necessary packages
 ```shell
 sudo apt install -y software-properties-common
 ```
-add the official ansible repository and install it
+Add the official ansible repository and install it
 ```shell
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible vim iputils-ping sshpass -y
 ```
-check de ansible version
+Check de ansible version
 ```shell
 ansible --version
 ```
