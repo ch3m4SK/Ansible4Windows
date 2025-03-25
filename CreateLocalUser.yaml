@@ -1,0 +1,15 @@
+---
+- name: Create a local user on Windows
+  hosts: windows
+  gather_facts: no
+  vars:
+    username: "user1"
+    password: "P@ssw0rd123"
+  tasks:
+    - name: Crear el usuario en Windows
+      ansible.windows.win_user:
+        name: "{{ username }}"
+        password: "{{ password }}"
+        state: present
+        description: "User created from Ansible"
+        groups: [] # Not added to groups on this playbook
