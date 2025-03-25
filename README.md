@@ -5,7 +5,7 @@
   - [WinRM](#winrm)
   - [SSH](#ssh-for-windows-server-2025)
   - [Configure ubuntu](#configure-ubuntu-and-prepare-the-environment)
-  - [Create inventory file](#create-a-new-inventory)
+- [Create inventory file](#create-a-new-inventory)
 
 <div align="center">
 <h1> Introduction</h1>
