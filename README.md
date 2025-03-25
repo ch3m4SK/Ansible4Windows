@@ -1,2 +1,2 @@
 # Ansible4Windows
-Ansible playbooks useful for a sysadmin's day
+![Ansible Logo](./images/ansible-logo.jpg)
