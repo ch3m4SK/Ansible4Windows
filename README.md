@@ -47,6 +47,10 @@ Create firewall rule
 ```shell
 New-NetFirewallRule -DisplayName 'Permitir SSH' -Name 'Permitir SSH' -Profile Any -LocalPort 22 -Protocol TCP
 ```
+Configure the defatult shell for SSH
+```shell
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name ShellPorDefecto -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
+```
 start the service
 ```shell
 start-service -name sshd
