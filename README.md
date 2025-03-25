@@ -4,7 +4,7 @@
 - [Initial Set-Up](#initial-set-up)
   - [WinRM](#winrm)
   - [SSH](#ssh-for-windows-server-2025)
-  - [Configure ubuntu and prepare the environment](#configure-ubuntu-and-prepare-the-environment)
+  - [Configure ubuntu](#configure-ubuntu-and-prepare-the-environment)
 
 <div align="center">
 <h1> Introduction</h1>
