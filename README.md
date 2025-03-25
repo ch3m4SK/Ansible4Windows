@@ -16,4 +16,15 @@ There are mainly two ways to use ansible for windows, WinRM and SSH, depending o
 # Powershell as administrator
 winrm quickconfig
 winrm set winrm/config/service/Auth '@{Basic="true"}'
+winrm set winrm/config/service '@{AllowUnencrypted="true"}'
 ```
+
+
+
+
+
+
+# En PowerShell (ejecutar como administrador)
+winrm quickconfig
+winrm set winrm/config/service/Auth '@{Basic="true"}'
+winrm set winrm/config/service '@{AllowUnencrypted="true"}'
