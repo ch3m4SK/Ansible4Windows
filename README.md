@@ -2,5 +2,5 @@
 ![Ansible Logo](./images/ansible-1.jpg)
 
 <div align="center">
-<h1> Introduccion</h1>
+<h1> Introduction</h1>
 </div>
