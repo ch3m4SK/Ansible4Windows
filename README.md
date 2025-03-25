@@ -5,6 +5,7 @@
   - [WinRM](#winrm)
   - [SSH](#ssh-for-windows-server-2025)
   - [Configure ubuntu](#configure-ubuntu-and-prepare-the-environment)
+  - [Create inventory file](#create-a-new-inventory)
 
 <div align="center">
 <h1> Introduction</h1>
@@ -78,3 +79,24 @@ ansible --version
 Expected answer
 
 ![Ansible --version](./images/ansible-version.png)
+
+# Create a new inventory
+
+Create a new file called inventory.ini
+```shell
+sudo nano ./inventory.ini
+```
+
+File content
+```shell
+[windows]
+server2025 ansible_host=10.10.100.166 #Listado de servidores
+[all:vars]
+ansible_connection = ssh
+ansible_shell_type = powershell
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+```
+Test connection
+```shell
+ansible all -i hosts_inicial.ini -m ansible.windows.win_ping -u Administrator --ask-pass
+```
