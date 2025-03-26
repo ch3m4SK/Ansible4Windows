@@ -58,6 +58,27 @@ start the service
 start-service -name sshd
 ```
 
+## Configure key pair
+Generate an SSH key pair on your Ubuntu machine
+```shell
+ssh-keygen -b 4096
+```
+This creates two files in ~/.ssh/
+
+id_ed25519 (private key)
+id_ed25519.pub (publick key)
+
+### Transfer public key to server
+Create the file "C:\ProgramData\ssh\administrators_authorized_keys and paste the content of the generated public key
+```shell
+cat ~/.ssh/id_ed25519.pub
+```
+Expected result
+You should be able to access the windows machine by SSH without password
+```shell
+ssh ansible_user@192.168.10.165
+```
+
 # Configure ubuntu and prepare the environment
 
 Upgrade ubuntu 24.04
