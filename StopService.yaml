@@ -1,0 +1,11 @@
+---
+- name: Stop a Windows Service
+  hosts: windows
+  gather_facts: no
+  vars:
+    service_name: "Spooler" # Change this to the name of the service you want to stop
+  tasks:
+    - name: Stop service
+      ansible.windows.win_service:
+        name: "{{ service_name }}"
+        state: stopped
