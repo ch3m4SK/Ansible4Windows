@@ -7,6 +7,7 @@
   - [Configure ubuntu](#configure-ubuntu-and-prepare-the-environment)
 - [Create inventory file](#create-a-new-inventory)
 - [Test connection](#test-connection)
+- [Configure key pair](#configure-key-pair)
 
 <div align="center">
 <h1> Introduction</h1>
@@ -53,7 +54,7 @@ Configure the defatult shell for SSH
 ```shell
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name ShellPorDefecto -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
 ```
-start the service
+Start the service
 ```shell
 start-service -name sshd
 ```
