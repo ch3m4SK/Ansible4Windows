@@ -1,0 +1,30 @@
+---
+- name: Enable Remote Desktop in Windows
+  hosts: windows
+  gather_facts: no
+  tasks:
+    - name: Enable Remote Desktop in the Windows registry
+      ansible.windows.win_regedit:
+        path: "HKLM:\\System\\CurrentControlSet\\Control\\Terminal Server"
+        name: "fDenyTSConnections"
+        data: 0
+        type: dword
+        state: present
+    - name: Allowing Remote Desktop connections in Windows settings
+      ansible.windows.win_shell: |
+        (Get-WmiObject -Class Win32_TerminalServiceSetting -Namespace root\cimv2\terminalservices).SetAllowTsConnections(1,1)
+      register: resultado_habilitar_rdp
+      changed_when: resultado_habilitar_rdp.rc == 0
+    - name: Enabling RDP in Windows Firewall
+      community.windows.win_firewall_rule:
+        name: "Permitir Escritorio Remoto"
+        enable: yes
+        direction: in
+        action: allow
+        protocol: TCP
+        localport: 3389
+    - name: Ensure that the Remote Desktop service is enabled and running.
+      ansible.windows.win_service:
+        name: "TermService"
+        start_mode: auto
+        state: started
