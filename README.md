@@ -4,10 +4,10 @@
 - [Initial Set-Up](#initial-set-up)
   - [WinRM](#winrm)
   - [SSH](#ssh-for-windows-server-2025)
+  - [Configure key pair](#configure-key-pair)
   - [Configure ubuntu](#configure-ubuntu-and-prepare-the-environment)
 - [Create inventory file](#create-a-new-inventory)
 - [Test connection](#test-connection)
-- [Configure key pair](#configure-key-pair)
 
 <div align="center">
 <h1> Introduction</h1>
